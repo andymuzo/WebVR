@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Carousel</title>
+    <meta name="description" content="Carousel Animation">
+    <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="sky" src="starglobe.jpg">
+      </a-assets>
+    
+    <a-sky src="#sky"></a-sky>
+
+    <!--floor and ceiling-->
+    <a-circle position="0 -3.5 -10" radius="10" rotation="-90 0 0" color="#9E2F00"></a-circle>
+    <a-circle position="0 8 -10" radius="10" rotation="90 0 0" color="#9E2F00"></a-circle>
+ 
+    <!-- inner cylinder -->
+    <a-entity position="0 -4.9 -10" rotation="0 45 28">
+      <a-cylinder  position="0 3.5 0" color="#9E2F00" height="7" radius="0.2"></a-cylinder>
+      <a-entity rotation="180 0 0">
+        <a-light color="#fff" position="0 7 0" intensity="2"></a-light>
+      </a-entity>
+        <a-animation attribute="rotation"
+               dur="3500"
+               fill="forwards"
+               to="0 45 -28"
+               repeat="indefinite"
+               easing="linear"
+               direction="alternate"></a-animation>
+    </a-entity>
+
+    <a-entity position="0 9.9 -10" rotation="180 45 28">
+      <a-cylinder  position="0 3.5 0" color="#9E2F00" height="7" radius="0.2"></a-cylinder>
+      <a-entity rotation="180 0 0">
+        <a-light color="#fff" position="0 7 0" intensity="2"></a-light>
+      </a-entity>
+        <a-animation attribute="rotation"
+               dur="3500"
+               fill="forwards"
+               to="180 45 -28"
+               repeat="indefinite"
+               easing="linear"
+               direction="alternate"></a-animation>
+    </a-entity>
+
+    <a-entity position="0 2.5 -10" rotation="0 45 0">  
+      <a-sphere color="#E69E2F" metalness="0.0" radius="0.4" position="-3.3 0 0">
+        <a-light color="#fff" type="point">
+          <a-animation attribute="intensity"
+                  from="0.1" 
+                  to="10" 
+                  dur="28000"
+                  direction="alternate"
+                  repeat="indefinite"></a-animation>
+        </a-light>
+      <a-animation attribute="position"
+                dur="3500"
+                 fill="forwards"
+                to="3.3 0 0"
+                repeat="indefinite"
+                easing="linear"
+                direction="alternate"></a-animation>              
+      </a-sphere>
+    </a-entity>
+
+
+    <!-- inner boxes -->
+    <a-entity  position="0 6 -10">
+      <a-box position="0 0 -3" color="#D14F17" width="0.6" depth="0.6" height="5"></a-box>
+      <a-box position="-3 0 0" color="#D14F17" width="0.6" depth="0.6" height="5"></a-box>
+      <a-box position="0 0 3" color="#D14F17" width="0.6" depth="0.6" height="5"></a-box>
+      <a-box position="3 0 0" color="#D14F17" width="0.6" depth="0.6" height="5"></a-box>
+
+      <a-animation attribute="rotation"
+               dur="14000"
+               fill="forwards"
+               to="0 360 0"
+               easing="linear"
+               repeat="indefinite"></a-animation>
+
+    </a-entity>
+
+    <a-entity  position="0 -1 -10" rotation="180 0 0">
+      <a-box position="0 0 -3" color="#D14F17" width="0.6" depth="0.6" height="5"></a-box>
+      <a-box position="-3 0 0" color="#D14F17" width="0.6" depth="0.6" height="5"></a-box>
+      <a-box position="0 0 3" color="#D14F17" width="0.6" depth="0.6" height="5"></a-box>
+      <a-box position="3 0 0" color="#D14F17" width="0.6" depth="0.6" height="5"></a-box>
+
+      <a-animation attribute="rotation"
+               dur="14000"
+               fill="forwards"
+               to="180 360 0"
+               easing="linear"
+               repeat="indefinite"></a-animation>
+
+    </a-entity>
+
+    <!-- moving boxes -->
+    <a-entity  position="0 7 -10" rotation="0 -45 0">
+      <a-entity position="0 -0.9 0">
+        <a-box position="0 0 -3" color="#D14F17" width="0.6" depth="0.6" height="7"></a-box>
+        <a-box position="0 0 3" color="#D14F17" width="0.6" depth="0.6" height="7"></a-box>
+        <a-animation attribute="position"
+                dur="3500"
+                fill="forwards"
+                to="0 3 0"
+                repeat="indefinite"
+                easing="linear"
+                direction="alternate-reverse"></a-animation>   
+      </a-entity>
+      <a-entity position="0 -0.9 0">
+        <a-box position="-3 0 0" color="#D14F17" width="0.6" depth="0.6" height="7"></a-box>
+        <a-box position="3 0 0" color="#D14F17" width="0.6" depth="0.6" height="7"></a-box>
+                <a-animation attribute="position"
+                dur="3500"
+                fill="forwards"
+                to="0 3 0"
+                repeat="indefinite"
+                easing="linear"
+                direction="alternate"></a-animation> 
+      </a-entity>
+      <a-animation attribute="rotation"
+               dur="14000"
+               fill="forwards"
+               to="0 315 0"
+               easing="linear"
+               repeat="indefinite"></a-animation>
+
+    </a-entity>
+
+    <a-entity  position="0 -2 -10" rotation="180 -45 0">
+      <a-entity position="0 -0.9 0">
+        <a-box position="0 0 -3" color="#D14F17" width="0.6" depth="0.6" height="7"></a-box>
+        <a-box position="0 0 3" color="#D14F17" width="0.6" depth="0.6" height="7"></a-box>
+        <a-animation attribute="position"
+                dur="3500"
+                fill="forwards"
+                to="0 3 0"
+                repeat="indefinite"
+                easing="linear"
+                direction="alternate-reverse"></a-animation>   
+      </a-entity>
+      <a-entity position="0 -0.9 0">
+        <a-box position="-3 0 0" color="#D14F17" width="0.6" depth="0.6" height="7"></a-box>
+        <a-box position="3 0 0" color="#D14F17" width="0.6" depth="0.6" height="7"></a-box>
+        <a-animation attribute="position"
+                dur="3500"
+                fill="forwards"
+                to="0 3 0"
+                repeat="indefinite"
+                easing="linear"
+                direction="alternate"></a-animation> 
+      </a-entity>
+      <a-animation attribute="rotation"
+               dur="14000"
+               fill="forwards"
+               to="180 315 0"
+               easing="linear"
+               repeat="indefinite"></a-animation>
+
+    </a-entity>
+
+    <!-- outer spikes -->
+    <a-entity  position="0 3.5 -10">
+      <a-cone position="0 0 -4.5" color="#E69E2F" radius-bottom="0.5" radius-top="0" height="1.5" segments-radial="4" segments-height="1"></a-cone>
+      <a-cone position="-4.5 0 0" color="#E69E2F" radius-bottom="0.5" radius-top="0" height="1.5" segments-radial="4" segments-height="1"></a-cone>
+      <a-cone position="0 0 4.5" color="#E69E2F" radius-bottom="0.5" radius-top="0" height="1.5" segments-radial="4" segments-height="1"></a-cone>
+      <a-cone position="4.5 0 0" color="#E69E2F" radius-bottom="0.5" radius-top="0" height="1.5" segments-radial="4" segments-height="1"></a-cone>
+
+      <a-animation attribute="rotation"
+               dur="20000"
+               fill="forwards"
+               to="0 -360 0"
+               easing="linear"
+               repeat="indefinite"></a-animation>
+      <a-animation attribute="position"
+                dur="3000"
+                 fill="forwards"
+                to="0 3.26 -10"
+                repeat="indefinite"
+                direction="alternate"></a-animation>    
+
+    </a-entity>
+
+    <a-entity  position="0 1.5 -10" rotation="180 0 0">
+      <a-cone position="0 0 -4.5" color="#E69E2F" radius-bottom="0.5" radius-top="0" height="1.5" segments-radial="4" segments-height="1"></a-cone>
+      <a-cone position="-4.5 0 0" color="#E69E2F" radius-bottom="0.5" radius-top="0" height="1.5" segments-radial="4" segments-height="1"></a-cone>
+      <a-cone position="0 0 4.5" color="#E69E2F" radius-bottom="0.5" radius-top="0" height="1.5" segments-radial="4" segments-height="1"></a-cone>
+      <a-cone position="4.5 0 0" color="#E69E2F" radius-bottom="0.5" radius-top="0" height="1.5" segments-radial="4" segments-height="1"></a-cone>
+
+      <a-animation attribute="rotation"
+               dur="20000"
+               fill="forwards"
+               to="180 -360 0"
+               easing="linear"
+               repeat="indefinite"></a-animation>
+      <a-animation attribute="position"
+                dur="3000"
+                 fill="forwards"
+                to="0 1.74 -10"
+                repeat="indefinite"
+                direction="alternate"></a-animation>  
+
+    </a-entity>
+
+    <!--sphere -->
+    <a-entity position="0 2.5 -10" rotation="20 0 0">
+    <a-entity>
+     <a-entity>
+        <a-sphere color="#DBBC4D" metalness="0.4" radius="0.6" position="6 0 0"></a-sphere>
+        <a-torus color="#DBBC4D" metalness="0.4" radius="0.85" position="6 0 0" radius-tubular="0.05" segments-tubular="24" rotation="0 35 0">
+          <a-animation attribute="rotation"
+                dur="8000"
+                fill="forwards"
+                to="360 35 0"
+                easing="linear"
+                repeat="indefinite"></a-animation>
+
+        </a-torus>
+        <a-torus color="#DBBC4D" metalness="0.4" radius="1" position="6 0 0" radius-tubular="0.03" segments-tubular="24" rotation="40 0 0">
+          <a-animation attribute="rotation"
+                dur="4200"
+                fill="forwards"
+                to="40 360 0"
+                easing="linear"
+                repeat="indefinite"></a-animation>
+
+        </a-torus>
+      </a-entity>
+      <a-entity rotation="0 -20 0">
+       <a-sphere color="#DBBC4D" metalness="0.4" radius="0.4" position="6 0 0"></a-sphere>
+      </a-entity>
+      <a-entity rotation="0 -40 0">
+        <a-sphere color="#DBBC4D" metalness="0.4" radius="0.2" position="6 0 0"></a-sphere>
+      </a-entity>
+      <a-animation attribute="rotation"
+               dur="16000"
+               fill="forwards"
+               to="0 360 0"
+               easing="linear"
+               repeat="indefinite"></a-animation>   
+      </a-entity>
+      </a-entity>
+
+    <a-entity position="0 2.5 -10" rotation="35 0 0">
+    <a-entity>
+     <a-entity>
+        <a-sphere color="#EBD99B" metalness="0.4" radius="0.6" position="8 0 0"></a-sphere>
+        <a-torus color="#EBD99B" metalness="0.4" radius="0.85" position="8 0 0" radius-tubular="0.035" segments-tubular="24" rotation="35 0 0">
+          <a-animation attribute="rotation"
+                dur="5000"
+                fill="forwards"
+                to="35 360 0"
+                easing="linear"
+                repeat="indefinite"></a-animation>
+
+        </a-torus>
+
+      </a-entity>
+      <a-entity rotation="0 -20 0">
+       <a-sphere color="#EBD99B" metalness="0.4" radius="0.4" position="8 0 0"></a-sphere>
+      </a-entity>
+      <a-entity rotation="0 -40 0">
+        <a-sphere color="#EBD99B" metalness="0.4" radius="0.2" position="8 0 0"></a-sphere>
+      </a-entity>
+      <a-animation attribute="rotation"
+               dur="20000"
+               fill="forwards"
+               to="0 360 0"
+               easing="linear"
+               repeat="indefinite"></a-animation>   
+      </a-entity>
+      </a-entity>
+
+    <!--light
+
+
+    <a-entity position="0 2.5 -10">
+        <a-light color="'red'" position="0 0 -10" intensity="3"></a-light>
+        <a-animation attribute="rotation"
+               dur="20000"
+               fill="forwards"
+               to="0 360 0"
+               easing="linear"
+               repeat="indefinite"></a-animation>  
+
+    </a-entity>
+
+    <a-entity position="0 2.5 -10">
+        
+        <a-animation attribute="rotation"
+               dur="20000"
+               fill="forwards"
+               to="0 360 0"
+               easing="linear"
+               repeat="indefinite"></a-animation>  
+
+    </a-entity>
+    -->
+
+      <a-light color="#fff" type="ambient" intensity="0.3"></a-light>
+
+    </a-scene>
+  </body>
+</html>
